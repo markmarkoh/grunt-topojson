@@ -1,0 +1,46 @@
+{
+  "name": "grunt-topojson",
+  "description": "Convert GeoJSON to TopoJSON",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mark.dimarco/grunt-topojson",
+  "author": {
+    "name": "Mark DiMarco",
+    "email": "mark.dimarco@gmail.com",
+    "url": "http://work.markmarkoh.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mark.dimarco/grunt-topojson.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mark.dimarco/grunt-topojson/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mark.dimarco/grunt-topojson/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.4"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.4"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "topojson": "~1.6.8",
+    "underscore": "~1.6.0"
+  }
+}
