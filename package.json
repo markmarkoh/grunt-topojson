@@ -1,6 +1,6 @@
 {
   "name": "grunt-topojson",
-  "description": "Convert GeoJSON to TopoJSON",
+  "description": "Grunt task for converting GeoJSON to TopoJSON",
   "version": "0.1.0",
   "homepage": "https://github.com/mark.dimarco/grunt-topojson",
   "author": {

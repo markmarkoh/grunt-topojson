@@ -37,30 +37,65 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.idProperty
 Type: `String`
-Default value: `',  '`
+Default value: `null`
 
-A string value that is used to do something with whatever.
+The key from `geography.properties` that should be used as `id`. Defaults to the `geography.id`.
 
-#### options.punctuation
+#### options.copyProperties
+Type: `Array`
+Default value: `null`
+
+An array of properties to be copied. Use an empty array to not copy any properties. Keep `null` to copy all properties.
+
+#### options.collectionName
 Type: `String`
-Default value: `'.'`
+Default value: `null`
 
-A string value that is used to do something else with whatever else.
+A property to be used to name the collection. Defaults to task name.
+For example, if your config looks like this:
+```js
+topojson: {
+  world: {
+    files: []
+  }
+}
+```
+
+The collectionName will default to `world`. This can be overridden by specifying a `collectionName`.
+```js
+topojson: {
+  world: {
+    files: []
+  },
+  options: {
+    collectionName: 'custom-data-world'
+  }
+}
+```
+
+All other [options can be found on the TopoJSON API documentation page](https://github.com/mbostock/topojson/wiki/API-Reference#server-api)
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+With all default options, `src/world.json` will be converted into topoJSON and placed in `dest/world.topo.json`.
+The results will look something like:
+
+```json
+{"type":"Topology","objects":{"world":{"type":"GeometryCollection","geometries":[{"type":"Polygo...
+```
 
 ```js
 grunt.initConfig({
   topojson: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    world: {
+      options: {},
+      files: {
+        'dest/world.topo.json': ['src/world.json'],
+      }
+    }
   },
 });
 ```
@@ -68,16 +103,22 @@ grunt.initConfig({
 #### Custom Options
 In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
 
+```json
+{"type":"Topology","objects":{"custom-world":{"type":"GeometryCollection","geometries":[{"type":"Polygo...
+```
+
 ```js
 grunt.initConfig({
   topojson: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    world: {
+      options: {
+        collectionName: 'custom-world',
+        quantization: 1e7
+      },
+      files: {
+        'dest/world.topo.json': ['src/world.json'],
+      }
+    }
   },
 });
 ```
