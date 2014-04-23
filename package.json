@@ -2,7 +2,7 @@
   "name": "grunt-topojson",
   "description": "Grunt task for converting GeoJSON to TopoJSON",
   "version": "0.1.0",
-  "homepage": "https://github.com/mark.dimarco/grunt-topojson",
+  "homepage": "https://github.com/markmarkoh/grunt-topojson",
   "author": {
     "name": "Mark DiMarco",
     "email": "mark.dimarco@gmail.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mark.dimarco/grunt-topojson.git"
+    "url": "git://github.com/markmarkoh/grunt-topojson.git"
   },
   "bugs": {
-    "url": "https://github.com/mark.dimarco/grunt-topojson/issues"
+    "url": "https://github.com/markmarkoh/grunt-topojson/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mark.dimarco/grunt-topojson/blob/master/LICENSE-MIT"
+      "url": "https://github.com/markmarkoh/grunt-topojson/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
